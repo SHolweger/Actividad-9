@@ -18,7 +18,7 @@ double calcular_promedio(double * notas, int columnas) {
 }
 
 int main() {
-  cout<<" Bienvenido al programa 2 - Calcular notas mediante punteros y estructuras - Por Sebastian Holweger";
+  cout << " Bienvenido al programa 2 - Calcular notas mediante punteros y estructuras\n - Por Sebastian Holweger" << endl;
   Estudiante estudiante;
   int fila = 0, columna = 0;
   cout << "Cuantos estudiantes desea agregar: ";
@@ -52,7 +52,6 @@ int main() {
     }
 
     estudiante.promedio[i] = calcular_promedio(estudiante.notas[i], columna);
-
     cout << " =================================================== " << endl;
   }
 
@@ -61,20 +60,16 @@ int main() {
     cout << "ID: " << estudiante.id[i] << endl;
     cout << "Nombre: " << estudiante.nombres[i] << endl;
     cout << "Apellidos: " << estudiante.apellidos[i] << endl;
-
     cout << "Promedio: " << estudiante.promedio[i] << endl;
 
-    // Imprimir mensaje de aprobado o reprobado
     if (estudiante.promedio[i] > 60) {
-      cout << "El estudiante ha aprobado." << endl;
+      cout << "El/la estudiante ha aprobado." << endl;
     } else {
-      cout << "El estudiante ha reprobado." << endl;
+      cout << "El/la estudiante ha reprobado." << endl;
     }
-
     cout << " =================================================== " << endl;
   }
 
-  //Liberar memoria dinamica
   for (int i = 0; i < fila; i++) {
     delete[] estudiante.notas[i];
   }
